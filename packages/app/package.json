@@ -1,0 +1,37 @@
+{
+  "name": "app",
+  "description": "frontend & backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "eslint './*.{js,jsx,ts,tsx}' --ignore-path ../../.gitignore && tsc --noEmit",
+    "prisma:migrate": "prisma migrate dev"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.9",
+    "@next-auth/prisma-adapter": "^1.0.5",
+    "@next/font": "13.1.6",
+    "@prisma/client": "^4.10.1",
+    "next": "13.1.6",
+    "next-auth": "^4.19.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "swr": "^2.1.1"
+  },
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "^10.1.0",
+    "@types/formidable": "^2.0.5",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "prisma": "^4.10.1",
+    "prisma-erd-generator": "^1.5.4"
+  }
+}

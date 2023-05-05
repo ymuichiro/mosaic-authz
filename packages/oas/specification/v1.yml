@@ -1,0 +1,52 @@
+openapi: 3.0.3
+info:
+  title: Swagger Sample - OpenAPI 3.0
+  description: sample
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.11
+
+servers:
+  - url: http://localhost:3001
+tags:
+  - name: user
+    description: user
+paths:
+  /user:
+    get:
+      tags: [user]
+      summary: get users
+      operationId: get-users
+      description: get users list
+      responses:
+        '200':
+          $ref: '#/components/responses/GetUsersResponse'
+components:
+  responses:
+    GetUsersResponse:
+      description: SUCCESSFUL
+      content:
+        application/json:
+          schema:
+            title: GetUsersResponseInner
+            type: object
+            required: [data]
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+  schemas:
+    User:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        image:
+          type: string
+          description: base64 encoding

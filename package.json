@@ -1,0 +1,37 @@
+{
+  "name": "template-next-orm",
+  "description": "Next.js + Prisma + OpenAPI Template",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/app",
+    "packages/oas"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w packages/app",
+    "build": "npm run build -w packages/app",
+    "oas": "npm run build -w packages/oas",
+    "prisma": "npm run prisma:migrate -w packages/app",
+    "test": "prettier --write 'packages/**/*.{js,jsx,ts,tsx,json,css,md}' --ignore-path .gitignore && npm test -w packages/app && npm run lint -w packages/app"
+  },
+  "dependencies": {
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.5.2",
+    "@types/node": "^18.15.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.36.0",
+    "eslint-config-next": "^13.2.4",
+    "prettier": "^2.8.7",
+    "rimraf": "^4.4.1",
+    "swagger-viewer": "^0.2.9"
+  },
+  "bugs": {
+    "url": "https://github.com/ymuichiro/template-next-orm/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ymuichiro/template-next-orm.git"
+  }
+}
