@@ -9,6 +9,10 @@ Discord で OAuth2 認証を確認後、かつ SSS Extention での秘密鍵の�
 
 前提として、Mosaic を手放した際のロール剥奪機能は未実装。別途 Cron を実行し、定期的に Mosaic の所有を監視する必要を要する。
 
+This is a Discord application that confirms OAuth2 authentication in Discord and also proves ownership of the private key in SSS Extention, then if the account has a particular mosaic, grants the specified role.
+
+As a prerequisite, the role revocation feature is not yet implemented in case the Mosaic has been relinquished. It is necessary to run Cron separately to monitor Mosaic ownership on a regular basis.
+
 ## 認証フロー
 
 1. ユーザーが discord サーバーに参加する
