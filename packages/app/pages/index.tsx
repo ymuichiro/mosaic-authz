@@ -1,4 +1,5 @@
 import authentication from '@/assets/authentication.json';
+import blockchain from '@/assets/blockchain.json';
 import { authPath } from '@/services/Navigaion';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -34,7 +35,7 @@ export default function Home(): JSX.Element {
             gap: '5svh',
           }}
         >
-          <Lottie animationData={authentication} style={{ height: '300px' }} />
+          <Lottie animationData={blockchain} style={{ height: '300px' }} />
           <Button
             style={{ maxWidth: '300px' }}
             fullWidth
