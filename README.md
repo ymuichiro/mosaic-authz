@@ -29,6 +29,24 @@ Discord で OAuth2 認証を確認後、かつ SSS Extention での秘密鍵の�
 7. If possession of the specified TOKEN is confirmed, discord bot grants ROLE based on discord login information
 8. start access to the channel that only the user who owns the ROLE can access
 
+```mermaid
+sequenceDiagram
+    box Discord Auth Flow by Mosaic
+    actor U AS User
+    participant D as Discord
+    participant A as Auth Server
+    end
+
+    U->>D: First Access
+    U->>A: Redirect to auth server
+    U->>A: Discord OAuth Login && send encrypted message by symbol
+    A->>A: decrypt message & Confirm possession of private key
+    A->>A: Check Mosaic Possession
+    A->>A: GET Discord UserID
+    A->>U: if ok = SET Discord ROLE
+    U->>D: Access to closed channel
+```
+
 ## discord permissions
 
 [console](https://discord.com/developers/applications)
