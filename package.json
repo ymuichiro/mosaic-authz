@@ -1,21 +1,42 @@
 {
-  "name": "template-next-orm",
-  "description": "Next.js + Prisma + OpenAPI Template",
-  "version": "0.1.0",
-  "private": true,
-  "workspaces": [
-    "packages/app"
-  ],
+  "name": "mosaic-authz",
+  "description": "mosaic-authz",
+  "version": "0.1.1",
+  "private": false,
   "scripts": {
-    "dev": "npm run dev -w packages/app",
-    "build": "npm run build -w packages/app",
-    "test": "prettier --write 'packages/**/*.{js,jsx,ts,tsx,json,css,md}' --ignore-path .gitignore && npm test -w packages/app && npm run lint -w packages/app"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "next lint && prettier --write '**/*.{js,jsx,ts,tsx,json,css,md}' --ignore-path .gitignore && eslint './*.{js,jsx,ts,tsx}' --ignore-path .gitignore && tsc --noEmit"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.9",
+    "@next-auth/prisma-adapter": "^1.0.5",
+    "@next/font": "13.1.6",
+    "@prisma/client": "^4.10.1",
+    "axios": "^1.4.0",
+    "lottie-react": "^2.4.0",
+    "next": "13.1.6",
+    "next-auth": "^4.19.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "sss-module": "^1.0.4",
+    "swr": "^2.1.1",
+    "symbol-sdk": "^2.0.4",
+    "sharp": "^0.32.1",
     "typescript": "^4.9.5"
   },
   "devDependencies": {
-    "@types/node": "^18.15.0",
+    "@mermaid-js/mermaid-cli": "^10.1.0",
+    "@types/formidable": "^2.0.5",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "prisma": "^4.10.1",
+    "prisma-erd-generator": "^1.5.4",
     "cross-env": "^7.0.3",
     "eslint": "^8.36.0",
     "eslint-config-next": "^13.2.4",
