@@ -1,5 +1,7 @@
 # discord mosaic authz
 
+![logo](packages/app/assets/logo/logo.png)
+
 ## 機能
 
 Discord で OAuth2 認証を確認後、かつ SSS Extention での秘密鍵の所有を証明した上で、

@@ -1,4 +1,4 @@
-import AppLogo from '@/assets/logo/white.png';
+import AppLogo from '@/assets/logo/logo.png';
 import { authPath } from '@/services/Navigaion';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
