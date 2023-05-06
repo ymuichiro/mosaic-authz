@@ -18,14 +18,16 @@ Discord で OAuth2 認証を確認後、かつ SSS Extention での秘密鍵の�
 7. 特定 TOKEN の所有が確認された場合、 discord のログイン情報を元に、 discord bot より ROLE を付与
 8. 該当 ROLE を保有するユーザーのみアクセス可能なチャンネルへアクセス開始
 
-9. user joins the discord server
-10. access to the authentication server by following the URL for authentication 3. discord oauth login on the authentication server
-11. discord oauth login on the authentication server 4. then create an encrypted message with Blockchain Wallet and send it to the backend of the authentication server
-12. then create an encrypted message in Blockchain Wallet and send it to the backend of the authentication server 5.
-13. composite the encrypted message on the backend to prove possession of the private key
-14. Verify ownership of the specific TOKEN using the user's public key information
-15. If possession of the specified TOKEN is confirmed, discord bot grants ROLE based on discord login information
-16. start access to the channel that only the user who owns the ROLE can access
+## flow
+
+1. user joins the discord server
+2. access to the authentication server by following the URL for authentication 3. discord oauth login on the authentication server
+3. discord oauth login on the authentication server 4. then create an encrypted message with Blockchain Wallet and send it to the backend of the authentication server
+4. then create an encrypted message in Blockchain Wallet and send it to the backend of the authentication server 5.
+5. composite the encrypted message on the backend to prove possession of the private key
+6. Verify ownership of the specific TOKEN using the user's public key information
+7. If possession of the specified TOKEN is confirmed, discord bot grants ROLE based on discord login information
+8. start access to the channel that only the user who owns the ROLE can access
 
 ## discord permissions
 
