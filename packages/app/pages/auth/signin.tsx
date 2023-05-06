@@ -1,4 +1,5 @@
 import AppLogo from '@/assets/logo/white.png';
+import { rootPath } from '@/services/Navigaion';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -8,18 +9,8 @@ import Typography from '@mui/material/Typography';
 import { getProviders, signIn } from 'next-auth/react';
 import Image from 'next/image';
 import type { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next/types';
-import { rootPath } from '@/services/Navigaion';
 
 export default function SignIn({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const logoSwitch = (providerName: string) => {
-    switch (providerName) {
-      case 'GitHub':
-        return 'https://authjs.dev/img/providers/github.svg';
-      default:
-        return 'https://authjs.dev/img/providers/github.svg';
-    }
-  };
-
   return (
     <div
       style={{
@@ -50,7 +41,12 @@ export default function SignIn({ providers }: InferGetServerSidePropsType<typeof
                 color='neutral'
                 onClick={() => signIn(provider.id, { callbackUrl: rootPath.home() })}
               >
-                <Image src={logoSwitch(provider.name)} alt={provider.name} width={20} height={20} />
+                <Image
+                  src={'https://authjs.dev/img/providers/discord.svg'}
+                  alt={provider.name}
+                  width={20}
+                  height={20}
+                />
                 Sign in with {provider.name}
               </Button>
             ))}

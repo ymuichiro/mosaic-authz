@@ -1,13 +1,12 @@
-import * as React from 'react';
+import { authPath } from '@/services/Navigaion';
 import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import { MdMenu } from 'react-icons/md';
-import { useRouter } from 'next/router';
-import { authPath } from '@/services/Navigaion';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
+import { MdMenu } from 'react-icons/md';
 
 export default function AppBar() {
   const router = useRouter();
@@ -28,7 +27,7 @@ export default function AppBar() {
           <MdMenu />
         </IconButton>
         <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-          News
+          Mosaic AuthZ
         </Typography>
         <Button variant='outlined' onClick={handleAuth}>
           {session.status === 'authenticated' ? 'Sign Out' : session.status === 'loading' ? 'Loading...' : 'Sign In'}
