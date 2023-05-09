@@ -1,7 +1,5 @@
-
 ![GitHub Actions Status](https://img.shields.io/github/actions/workflow/status/ymuichiro/mosaic-authz/build.yaml)
 ![License](https://img.shields.io/github/license/ymuichiro/mosaic-authz)
-
 
 # mosaic authz
 
@@ -17,8 +15,8 @@ This authentication solution allows you to manage your discord community in a se
 
 The mosaic authz must be set up as a web server separate from the discord. symbol node can be connected to an already public node, or you can set up a new dedicated node by yourself.
 
-* [symbol node list](https://symbol-tools.com/symbolTools/view/tool/nodeList.html)
-* [how to build symbol node](https://symbol-community.com/docs/6)
+- [symbol node list](https://symbol-tools.com/symbolTools/view/tool/nodeList.html)
+- [how to build symbol node](https://symbol-community.com/docs/6)
 
 ```mermaid
 flowchart LR
@@ -112,7 +110,7 @@ sequenceDiagram
 Below are the steps to use mosaic authz. There are two options for launching the application: build it yourself or use a docker container.
 
 1. [Create a discord BOT](./docs/en/01-create-a-discord-bot.md)
-2. [Deploy mosaic authz](./docs/en/02-mosaic-authz-deploy-build.md)
+2. [Deploy mosaic authz](./docs/en/02-mosaic-authz-deploy.md)
 
 ## Links
 

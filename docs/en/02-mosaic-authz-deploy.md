@@ -13,7 +13,11 @@ This application requires the following environment
 Install the application. This procedure is shown based on the assumption that the system is built in a linux environment.
 
 ```shell
-git clone
+curl -LO https://github.com/ymuichiro/mosaic-authz/archive/refs/tags/0.1.1.tar.gz
+tar zxvf 0.1.1.tar.gz
+cd mosaic-authz-0.1.1
+npm ci
+touch .env.local
 ```
 
 Prepare the environment variable `.env.local` in the root of the project as follows
@@ -27,7 +31,7 @@ DISCORD_SERVER_ID=Specify the id of the server created in discord setup
 SYMBOL_MOSAIC_ID=Specify the id of the mosaic that will be granted access to the channel
 SYMBOL_ADMIN_PRIVATE_KEY=Specify private key for new Symbol account
 SYMBOL_ADMIN_PUBLIC_KEY=Specify public key for new Symbol account
-NEXTAUTH_URL=http://${your-domain};
+NEXT_PUBLIC_URL=http://${your-domain};
 SYMBOL_NETWORK_TYPE=production = 104 development 152
 SYMBOL_NODE_URL=http://${node-domain}:3001
 TZ=UTC

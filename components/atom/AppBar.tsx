@@ -1,5 +1,4 @@
 import LogoDark from '@/assets/logo/logo-wide-dark.png';
-import { authPath } from '@/services/Navigaion';
 import MuiAppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -15,9 +14,9 @@ export default function AppBar() {
 
   const handleAuth = () => {
     if (session.status === 'authenticated') {
-      router.push(authPath.signOut());
+      router.push('/auth/signout');
     } else if (session.status === 'unauthenticated') {
-      router.push(authPath.signIn());
+      router.push('/auth/signin');
     }
   };
 
@@ -29,7 +28,7 @@ export default function AppBar() {
             <Image src={LogoDark} height={40} width={200} alt='logo' style={{ flexGrow: 1 }} />
           </div>
         </Box>
-        <Button variant='outlined' onClick={handleAuth}>
+        <Button variant='outlined' onClick={handleAuth} sx={{ fontSize: { xs: '0.5rem', sm: '0.8rem' } }}>
           {session.status === 'authenticated' ? 'Sign Out' : session.status === 'loading' ? 'Loading...' : 'Sign In'}
         </Button>
       </Toolbar>

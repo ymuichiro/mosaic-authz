@@ -1,4 +1,5 @@
 import MuiLink from '@mui/material/Link';
+import { useTheme } from '@mui/material/styles';
 import NextLink from 'next/link';
 import { UrlObject } from 'url';
 
@@ -13,11 +14,16 @@ interface LinkProps {
  * Next.js Link component with MUI Link component
  */
 export default function Link(props: LinkProps): JSX.Element {
+  const theme = useTheme();
   return (
-    <NextLink href={props.href} passHref style={{ ...props.style, textDecoration: 'none' }}>
-      <MuiLink component={'span'} target={props.target} rel={props.target ? 'noopener noreferrer' : undefined}>
-        {props.children}
-      </MuiLink>
+    <NextLink
+      href={props.href}
+      passHref
+      target={props.target}
+      rel={props.target ? 'noopener noreferrer' : undefined}
+      style={{ ...props.style, textDecoration: 'none', fontSize: theme.typography.caption.fontSize }}
+    >
+      <MuiLink component={'span'}>{props.children}</MuiLink>
     </NextLink>
   );
 }
