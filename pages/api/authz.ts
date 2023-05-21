@@ -36,6 +36,7 @@ async function postHandle(req: NextApiRequest, res: NextApiResponse) {
   const SYSTEM_PRIVATEKEY = process.env.SYMBOL_ADMIN_PRIVATE_KEY;
   const SYMBOL_NETWORK_TYPE = Number(process.env.SYMBOL_NETWORK_TYPE);
   const SYMBOL_NODE_URL = process.env.SYMBOL_NODE_URL;
+  const REJECT_USERS = process.env.REJECT_USERS;
 
   if (
     !DISCORD_BOT_TOKEN ||
@@ -57,6 +58,11 @@ async function postHandle(req: NextApiRequest, res: NextApiResponse) {
   const { payload } = systemAccount.decryptMessage(new EncryptedMessage(token, userPublicAccount), userPublicAccount);
 
   if (payload !== 'Prove me right.') {
+    return res.status(404).end();
+  }
+
+  // リジェクト済みユーザーである場合処理を中断
+  if (REJECT_USERS.split(',').find((e) => userPublicAccount.address.plain() === e)) {
     return res.status(404).end();
   }
 

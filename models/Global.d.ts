@@ -16,6 +16,7 @@ declare namespace NodeJS {
     readonly SYMBOL_NETWORK_TYPE: string;
     readonly SYMBOL_NODE_URL: string;
     readonly CALLBACK_URL: string;
+    readonly REJECT_USERS: string;
     readonly TZ: string;
   }
 }
